@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { environment } from 'src/environments/environment';
+import { Title, Meta } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-root',
@@ -8,4 +9,20 @@ import { environment } from 'src/environments/environment';
 })
 export class AppComponent {
   username = environment.username;
+
+  constructor(private title: Title, private meta: Meta) {}
+
+  ngOnInit() {
+    this.title.setTitle('GitHub portfólio app');
+    this.meta.addTags([
+      {
+        name: 'description',
+        content: `${this.username}'s GitHub portfólio`,
+      },
+      {
+        name: 'author',
+        content: this.username,
+      },
+    ]);
+  }
 }

@@ -1,12 +1,13 @@
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { TransferHttpCacheModule } from '@nguniversal/common';
 
 import { AppComponent } from './app.component';
-import { PersonalInfoComponent } from './personal-info/personal-info.component';
-import { PanelComponent } from './panel/panel.component';
-import { RepositoriesComponent } from './repositories/repositories.component';
 import { OrganizationsComponent } from './organizations/organizations.component';
+import { PanelComponent } from './panel/panel.component';
+import { PersonalInfoComponent } from './personal-info/personal-info.component';
+import { RepositoriesComponent } from './repositories/repositories.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { OrganizationsComponent } from './organizations/organizations.component'
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
     HttpClientModule,
+    TransferHttpCacheModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
