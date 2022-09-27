@@ -9,8 +9,17 @@ import { RepositoriesComponent } from './repositories/repositories.component';
 import { OrganizationsComponent } from './organizations/organizations.component';
 
 @NgModule({
-  declarations: [AppComponent, PersonalInfoComponent, PanelComponent, RepositoriesComponent, OrganizationsComponent],
-  imports: [BrowserModule, HttpClientModule],
+  declarations: [
+    AppComponent,
+    PersonalInfoComponent,
+    PanelComponent,
+    RepositoriesComponent,
+    OrganizationsComponent,
+  ],
+  imports: [
+    BrowserModule.withServerTransition({ appId: 'serverApp' }),
+    HttpClientModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })
